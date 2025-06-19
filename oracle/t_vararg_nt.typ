@@ -1,0 +1,2 @@
+CREATE OR REPLACE type T_VARARG_NT as table of T_VARARG;
+/
