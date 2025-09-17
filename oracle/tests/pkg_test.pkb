@@ -63,14 +63,13 @@ procedure test_et is
 	--
 	v_et PKG_UTL_MATRIX.T_ET_REC_NT := PKG_UTL_MATRIX.T_ET_REC_NT(
 		 PKG_UTL_MATRIX.T_ET_REC('PKG_TEST.check_n2_0',PKG_UTL_MATRIX.T_FLAG_NT('N','-'))
-		,PKG_UTL_MATRIX.T_ET_REC('PKG_TEST.handle_0'  ,PKG_UTL_MATRIX.T_FLAG_NT('-','-'))
+		,PKG_UTL_MATRIX.T_ET_REC('PKG_TEST.handle_0'  ,PKG_UTL_MATRIX.T_FLAG_NT('-','X'))
 		,PKG_UTL_MATRIX.T_ET_REC('PKG_TEST.do_div',    PKG_UTL_MATRIX.T_FLAG_NT('X','-'))
 	);
 begin
 	-- load data
   v_args.add_arg('n1',42);
-  v_args.add_arg('n1',42);
-  v_args.add_arg('n2',3);
+  v_args.add_arg('n2',0);
 	PKG_UTL_MATRIX.execute_et(v_et, v_args);
   DBMS_OUTPUT.put_line(v_args.get_varchar2('result'));
 end;
